@@ -14,7 +14,10 @@ public class ExampleRun { // 코드 실행용 클래스
 //		ex.ex3();
 //		ex.ex4();
 //		ex.ex5();
-		ex.ex6();
+//		ex.ex6();
+//		ex.ex7();
+		ex.ex8();
+//		ex.ex9();
 		
 		
 	}

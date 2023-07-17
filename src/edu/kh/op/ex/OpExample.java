@@ -166,19 +166,143 @@ public class OpExample { // 예제 코드 작성용 클래스
 		System.out.println((b >= 1) && (b <= 10));
 
 		System.out.println("-".repeat(50));
-		// ||(OR) 연산자 : 둘 다 false면 false, 나머지는 true(AND의 반대) 
+		// ||(OR) 연산자 : 둘 다 false면 false, 나머지는 true(AND의 반대)
 		// 또는, ~거나, ~이거나
-		
+
 		int c = 10;
-		
+
 		// c는 10을 초과 했거나 짝수인가?
-		System.out.println( (c > 10) || (c % 2 == 0) );
+		System.out.println((c > 10) || (c % 2 == 0));
+
+	}
+
+	public void ex6() {
+
+		// 논리 부정 연산자 : !
+		// => 논리 값을 반대로 바꾸는 연산자
+
+		boolean bool1 = true;
+		boolean bool2 = !bool1; // false
+
+		System.out.println("bool1 : " + bool1);
+		System.out.println("bool2 : " + bool2);
+
+		System.out.println("-".repeat(50));
+
+		Scanner sc = new Scanner(System.in);
+
+		// 정수를 하나 입력 받았을 때,
+		// 1) 해당 정수가 1부터 100사이 값이 맞는지 확인 (1이상 100이하)
+		// 2) (반대) 1부터 100사이 값이 아닌지 확인
+
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+
+		// 1<= input <= 100
+		boolean result1 = 1 <= input && 100 >= input;
+		// (input >= 1) && (input <= 100)
+
+		System.out.printf("%d은/는 1 이상, 100 이항의 정수인가? : %b\n", input, result1);
+
+		// 1 이상 이면서 100이하 <-> 1"미만" "또는" 100"초과"
+
+		boolean result2 = (input < 1) || (input > 100);
+
+		boolean result3 = !(1 <= input && 100 >= input); // result 2 == reuslt3
+		boolean result4 = !result1;
+
+		System.out.printf("%d은/는 1미만, 100 초과 정수인가? : %b / %b / %b\n ", input, result2, result3, result4);
+
+	}
+
+	public void ex7() {
+
+		// 복합 대입 연산자 : += , -= , *= , /= , %=
+		// ->피연산자가 자신과 연산 후 결과를 다시 자신에게 대입
+
+		int a = 10;
+		a++; // a를 1증가 a++ , a += 1
+		System.out.println("a를 1증가 : " + a); // 11
+
+		// a를 4증가
+		a += 4;
+		System.out.println("a를 4증가 : " + a); // 15
+
+		// a를 10감소
+		a -= 10;
+		System.out.println("a를 10감소 : " + a); // 5
+
+		// a를 3배 증가
+		a *= 3;
+		System.out.println("a를 3배증가 : " + a); // 15
+
+		// a를 6으로 나눴을 때 몫
+		a /= 6;
+		System.out.println("a를 6나눔 : " + a); // 2
+
+		// a를 2으로 나눴을 때 나머지
+		a %= 2;
+		System.out.println("a를 2나눌때의 나머지 : " + a); // 0
 
 	}
 	
-	public void ex6(){
+	public void ex8() {
 		
+		// 삼항 연산자 : 조건식 ? 식1 : 식2  
+		
+		// => 조건식의 결과가 true면 식1 수행 false면 식2 수행
+		
+		// => 조건식 : 연산 결과가 true/false인 식 (비교, 논리, 논리부정 연산이 포함)
+		
+		int num = 30; 
+		// num이 30보다 크면(초과) "num은 30보다 큰 수 이다." 
+		// 아니면 "num은 30 이하의 수이다" 출력
+		
+		String result = num > 30 ? "num은 30보다 큰 수이다": "num은 30이하의 수이다.";		
+		System.out.println(result);
+		
+		//----------------------------------------------------------------
+		System.out.println("-".repeat(50));
+		
+		// 입력 받은 정수가음수인지 양수인지 구분
+		// 단, 0은 양수로 처리
+		
+		//ex)
+		// 정수 입력 : 4
+		// 양수 입니다.
+		
+		// 정수 입력 : -5
+		// 음수 입니다.
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력 :");
+		int input1 = sc.nextInt();
+		
+		String result2 = input1 >= 0 ? "양수 입니다." : "음수 입니다.";
+		System.out.println(result2);
 		
 	}
+	
+/*	public void ex9() { // 프로그래머스 :: 문자열 연산자 
+		
+		int n = 20;
+		int m = 50;
+		
+		char ineq = '<';
+		char eq = '=';
+		
+		int com = ineq + eq;
+		
+		if ( n + com + m   ){
+            answer = 1; 
+        } else 
+            answer = 0;
+        
+        
+        return answer;
 
+		
+	}
+*/
 }
