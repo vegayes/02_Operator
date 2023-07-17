@@ -48,19 +48,27 @@ public class OperatorPractice {
 	}
 
 	public void practice3() {
+		//세 과목의 점수가 각각 40점 이상이면서 평균이 60점 이상일 때 합격, 아니라면 불합격을 출력
 
 		System.out.print("국어: ");
-		int input1 = sc.nextInt();
+		int kor = sc.nextInt();
 
 		System.out.print("영어: ");
-		int input2 = sc.nextInt();
+		int eng = sc.nextInt();
 
 		System.out.print("수학: ");
-		int input3 = sc.nextInt();
+		int math = sc.nextInt();
 
-		System.out.printf("\n합계 : %d \n", input1 + input2 + input3);
-		System.out.printf("평균 : %.1f ", (double) (input1 + input2 + input3) / 3);
-
+		int sum = kor + eng + math ;
+		double avg = (double) (kor+eng+math) / 3;
+		
+		System.out.printf("\n합계 : %d \n", sum);
+		System.out.printf("평균 : %.1f ", avg);
+		
+		boolean result = kor>=40 && eng >=40 && math >= 40 && avg >=60;
+		
+		String output = result ? "합격" : "불합격";
+		System.out.printf("\n%s",output);
 	}
 
 }
