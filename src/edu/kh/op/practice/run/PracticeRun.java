@@ -1,6 +1,6 @@
 package edu.kh.op.practice.run;
 
-import edu.kh.op.practice.*;
+import edu.kh.op.practice.OperatorPractice;
 
 public class PracticeRun {
 
